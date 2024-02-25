@@ -10,21 +10,19 @@ The sum of 10 no is : 55
 The Average is : 5.500000
 */
 
-#include<stdio.h>
-int main()
-{
-    int i,N, sum,counter;
-    for (i=1;i<=10;i++)
-    {
-        scanf("%d",&N);
-        int sum;
-        sum +=N;
+#include <stdio.h>
 
+int main() {
+    int i, N, sum = 0, counter;
 
+    for (counter = 0; counter < 10; counter++) {
+        scanf("%d", &N);
+        sum += N;
     }
-    float avg;
-    avg = sum / 10.0;
-    printf("%f",avg);
 
+    float avg = sum / 10.0;
+    printf("%f", avg);
 
+    return 0;
 }
+
