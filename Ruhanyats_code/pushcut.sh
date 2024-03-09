@@ -10,9 +10,16 @@ process_directory() {
     # Print the current directory
     echo "Current directory: $directory"
 
-    # Add and commit only .sh and .cpp files
-    git add *.sh *.cpp
-    git commit -m "Automated commit for programming in $directory"
+    # Check if there are .cpp files in the directory
+    if compgen -G "*.cpp" > /dev/null; then
+        # Add and commit only .cpp files
+        git add *.cpp
+        git commit -m "Automated commit for programming in $directory"
+        # Push changes to the remote repository
+        git push origin dev
+    else
+        echo "No .cpp files found in $directory"
+    fi
 
     # Move back to the original directory
     cd - || exit
@@ -25,6 +32,3 @@ directories=$(find . -type d -not -path "./.git*")
 for dir in $directories; do
     process_directory "$dir"
 done
-
-# Push changes to the remote repository
-git push -u origin dev
