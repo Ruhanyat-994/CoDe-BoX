@@ -10,10 +10,8 @@ process_directory() {
     # Print the current directory
     echo "Current directory: $directory"
 
-    # Add all changes
-    git add .
-
-    # Commit the changes
+    # Add and commit only .sh and .cpp files
+    git add *.sh *.cpp
     git commit -m "Automated commit for programming in $directory"
 
     # Move back to the original directory
