@@ -5,6 +5,24 @@ int main()
 {
     int n ;
     scanf("%d",&n);
+    for (int row=1;row<=2*n-1;row++)
+    {
+
+        for(int col=row ;col<=1;col--)
+        {
+            printf("%d",col);
+        }
+    }
+}
+
+/*
+
+
+#include<stdio.h>
+int main()
+{
+    int n ;
+    scanf("%d",&n);
     for(int row=1;row<=2*n-1;row++)
     {
 
@@ -28,3 +46,4 @@ int main()
         printf("\n");
     }
 }
+*/
