@@ -7,31 +7,33 @@ int main()
 
     scanf("%d", &num);
 
+
     if (num%2!=0)
     {
-       for (int row = 1; row <= num; row++)
+        for (int row = 1; row <= num; row++)
         {
-            if (row == (num / 2) + 1 || row == 1 || row == num)
+            if (row == 1 || row == num)
             {
                 for (int col = 1; col <= num; col++)
                 {
-                    printf("*");
+                    printf("Z");
                 }
             }
             else
             {
                 for (int col = 1; col <= num; col++)
                 {
-                    if (col == 1 || col == num)
+                    if (col == (num - row) + 1)
                     {
-                        printf("*");
+                        printf("Z");
                     }
                     else
                     {
-                        printf("_");
+                        printf(" ");
                     }
                 }
             }
+
             printf("\n");
         }
     }
