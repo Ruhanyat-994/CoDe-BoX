@@ -1,4 +1,5 @@
 
+
 #include<stdio.h>
 int main()
 {
@@ -6,7 +7,7 @@ int main()
     scanf("%d",&num);
     for (int row=1;row<=num;row++)
     {
-        for(int col=row;col<num+row;col++)
+        for(int col=row;col<row+row;col++)
         {
             printf("%d",col);
         }
