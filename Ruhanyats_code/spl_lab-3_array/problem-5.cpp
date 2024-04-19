@@ -21,8 +21,11 @@ int main()
             sum = sum + arr[i];
         }
 
+
     }
+
     printf("%d",sum);
+
 
 }
 
