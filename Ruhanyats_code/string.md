@@ -156,7 +156,7 @@ int main()
 > 'We will cancel a uppercase representative and add a lowercase representative to get our desired result.For doing the vice-versa we will cancel the lowercase and add the uppercase'
 
 ### logic
-![alt text](https://github.com/Ruhanyat-994/CoDe-BoX/blob/dev/Ruhanyats_code/Photos/image.png?raw=true)
+![alt text](image.png)
 
 - we are adding the distance actually.
 
@@ -240,6 +240,7 @@ int main()
 - String Copy
 - Palindrome (mom , radar, rotator) . If you reverse the string it will remain the same.
 - String Reverse
+- String Comparison 
 
 ## String Length
 - Before null char all valid char is a length of string  
@@ -314,3 +315,215 @@ int main()
 }
 
 ```
+## String Concatenation
+1. Manually
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str1[50];
+    gets(str1);
+    char str2[50];
+    gets(str2);
+    int length = strlen(str1);
+    int j = length;
+    for(int i=0;str2[i]!=0;i++) 
+    {
+        str1[j]=str2[i];
+        j++;
+    }
+    str1[j]='\0';
+    printf("%s\t%s\n",str1,str2);
+}
+```
+- First of all what is concatenation? 
+    1. Its nothing but adding to string together.  
+
+- In the for loop we have used str2 because we will copy the str2 to str1 
+- We take the length of str1 because we will find the length and set it to another int J and we will change the value the null char of str1 with the string str2.
+
+2. Using Library Function
+
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str1[50];
+    gets(str1);
+    char str2[50];
+    gets(str2);
+    
+    strcat(str1,str2);
+    
+    puts(str1);
+}
+
+```
+<b>Output</b>
+```plaintext
+hello 
+world
+hello world
+```
+- strcat(str1,str2) it means all the string of str2 will be concatenated with str1 and will store that value to str1
+- So we print only the value of str1
+
+## String Comparison
+
+<b>
+1. String Comparison follow lexicographical order 
+    
+    Our old school dictionary follows the same order
+</b>
+
+
+![alt text](https://github.com/Ruhanyat-994/CoDe-BoX/blob/dev/Ruhanyats_code/Photos/image-2.png?raw=true)
+
+- Here first mismatch of the string values will be compared in the lexicographical order.
+- One mismatch is enough
+- When the length of two string is not same we can be sure that these string are not same
+
+- Suppose length of two string is not same but the small length string is matching with big length string to the end here the solution is .....
+
+> <b>"The small string will be compared as small"</b>
+
+![alt text](https://github.com/Ruhanyat-994/CoDe-BoX/blob/dev/Ruhanyats_code/Photos/image-1.png?raw=true)
+
+#### String Equality Check
+<b>1. Manually </b>
+
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str1[50];
+    gets(str1);
+    char str2[50];
+    gets(str2);
+    int len1 = strlen(str1);
+    int len2 = strlen(str2);
+    
+    if (len1 != len2)
+    {
+        printf("String is not Equal");
+    }
+    else
+    {
+        bool flag = true;
+        for(int i =0;str1[i]!=0;i++)
+        {
+            if (str1[i]!=str2[i])
+            {
+                flag = false;
+                break;
+            }
+           
+        }
+        if (flag == true)
+        {
+            printf("Strings are same");
+        }
+        else{
+            printf("Strings are not same");
+        }
+    }
+}
+```
+1. At first we are checking the length
+2. Then we have fixed a true value that if the length is same then the it is true
+3. Then we are running a loop where we are checking the string
+4. If we find any mismatch the flag that we have fixed will be set as false and the loop will break
+5. But if the flag is true we will use another condition
+
+<b>
+2. Using Library Function:
+</b>
+
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str1[50];
+    gets(str1);
+    char str2[50];
+    gets(str2);
+    int res = strcmp(str1,str2);
+    printf("%d\n",res);
+    if (res == 0)
+    {printf("Same string");}
+    else if(res > 0)
+    {printf("Str1 is greater than Str2");}
+    else
+    {printf("Str2 is greater than Str1");}
+}
+```
+
+```plaintext
+if str1 == str2 -> 0
+if str1 > str2 -> Positive
+if str1 < str2 -> Negative
+```
+## String Reverse
+
+<b>1. Manually </b>
+
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str1[50];
+    gets(str1);
+    int left = 0;
+    int right = strlen(str1)-1;
+    while(left<right)
+    {
+        char temp = str1[left];
+        str1[left]=str1[right];
+        str1[right]=temp;
+
+        left++;
+        right--;
+
+        
+    }
+    printf("%s",str1);
+}
+```
+![alt text](image-3.png)
+
+1. At first we are swapping the char left to right  
+
+<b>Swapping
+> char temp = a;  
+> a = b;  
+> b = temp ;
+</b>
+
+2. Then we will go from left to right and right to left.
+
+<b>2. Using Library function </b>
+
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[50];
+    gets(str);
+    strrev(str);
+    puts(str);
+}
+```
+
+## Plaindrome
+<b>  
+
+> 1. Do the String reverse
+> 2. Compare the reversed string with the actual string
+
+</b>
