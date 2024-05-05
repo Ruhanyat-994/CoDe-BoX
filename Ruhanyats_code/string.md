@@ -494,7 +494,7 @@ int main()
     printf("%s",str1);
 }
 ```
-![alt text](image-3.png)
+![alt text](image-3.png)](https://github.com/Ruhanyat-994/CoDe-BoX/blob/dev/Ruhanyats_code/Photos/image-3.png?raw=true)
 
 1. At first we are swapping the char left to right  
 
