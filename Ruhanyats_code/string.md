@@ -16,6 +16,28 @@ char str_name[90]="MianAlRuhanyat";
 ```C
 char str[5]={'M','i','a','n','/0'}
 ```
+## Some Common rules of String:  
+
+- In string we use double quotes 
+
+ ```c
+char str[100]="hello world"
+```
+- But in Char array we use single quotes
+
+- If you declare a string with 7 index and fill only 5 the other two will be replaced by two null chars
+```c
+char str[7]="Hamid"
+```
+| Address (Row 1) | &str[0] | &str[1] | &str[2] | &str[3] | &str[4] | &str[5] | &str[6] |
+|-----------------|---------|---------|---------|---------|---------|---------|---------|
+| Content (Row 2) |   'H'   |   'a'   |   'm'   |   'i'   |   'd'   |  '\0'   |'\0'|
+
+- Here null char is called as EOS character 
+- Before null char all the chars are valid chars
+- 
+
+
 ## Null Terminator
 - ```strlen``` is the function that terminates the null char and shows only the chars before the null chars.
 ```C
@@ -94,3 +116,201 @@ hello world
 | strupr()        | Converts string to uppercase.                                 |
 | strstr(s1, s2)  | Finds the first occurrence of s2 in s1.                       |
 
+## Printing Strings
+
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[50];
+    gets(str);
+    for(int i=0;str[i]!='\0';i++)
+    {
+        printf("%c",str[i]);
+    }
+}
+```
+<b>Output:</b>
+```plaintext
+My name is mian al ruha   
+My name is mian al ruha
+```
+- This loop will run until it gets '\0' or a garbage.
+
+## Case Convertion
+- Normal case conversion in C
+- Our goal is to convert the value of ch to its lowercase value and vice-versa
+
+```c
+#include<stdio.h>
+int main()
+{
+    char ch = 'E';
+    ch = ch - 'A'+'a';
+    printf("%c",ch);
+}
+```
+- This code will convert the ch value E to e 
+- The theory is ......
+> 'We will cancel a uppercase representative and add a lowercase representative to get our desired result.For doing the vice-versa we will cancel the lowercase and add the uppercase'
+
+### logic
+![alt text](image.png)
+
+- we are adding the distance actually.
+
+### Case conversion in String
+
+#### Question  
+<b>Sample Input: AbaCAs</b>  
+<b>Sample Output: aBAcaA</b>
+
+```c
+#include<stdio.h>
+int main()
+{
+   char str[50];
+   gets(str);
+
+   for(int i=0 ; str[i]!='\0';i++)
+   {
+        if(str[i]>='A' && str[i]<= 'Z')
+        {
+            str[i]=str[i]-'A'+'a';
+
+        }
+        else if (str[i]>='a' && str[i]<= 'z')
+        {
+            str[i]=str[i]-'a'+'A';
+        }
+   }
+   puts(str);
+}
+```
+## Counting UpperCase and LowerCase String
+
+#### Question  
+<b>Sample Input: </b>  
+Hello123husH  
+<b>Sample Output:</b>  
+Hello123husH  
+uppercass:2 lowercase:7 digit:3 specialchar:0  
+
+```c
+#include<stdio.h>
+int main()
+{
+   char str[50];
+   gets(str);
+
+   int upperCase=0;
+   int lowerCase = 0;
+   int digit = 0;
+   int specialChar = 0;
+
+
+   for(int i=0 ; str[i]!='\0';i++)
+   {
+        if(str[i]>='A' && str[i]<= 'Z')
+        {
+            upperCase++;
+
+        }
+        else if (str[i]>='a' && str[i]<= 'z')
+        {
+            lowerCase++;
+        }
+        else if(str[i]>='0' && str[i]<= '9')
+        {
+            digit++;
+        }
+        else{
+            specialChar++;
+        }
+   }
+   puts(str);
+   printf("uppercass:%d lowercase:%d digit:%d specialchar:%d",upperCase,lowerCase,digit,specialChar);
+
+}
+```
+## Some String Operations
+- String Length
+- String Concatenate 
+- String Copy
+- Palindrome (mom , radar, rotator) . If you reverse the string it will remain the same.
+- String Reverse
+
+## String Length
+- Before null char all valid char is a length of string  
+
+```C
+#include<stdio.h>
+int main()
+{
+    char str[50];
+    gets(str);
+    int length = 0;
+
+    for(int i=0; str[i]!='\0';i++)
+    {
+        length++;
+
+    }
+    printf("The length of the string is:%d\n",length);
+}
+```
+#### Another way 
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[50];
+    gets(str);
+    int length = strlen(str);
+    printf("The length of the string is:%d\n",length);
+}
+```
+## String Copy
+<b> 1. While copying a string the length of the two string should be same.  
+
+Process:  
+</b>
+
+1. Manually
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str1[50];
+    gets(str1);
+    char str2[50]={'\0'};
+    for(int i=0;str1[i]!='\0';i++)
+    {
+        str2[i] = str1[i];
+    }
+    printf("%s\t%s\n",str1,str2);
+    return 0;
+}
+```
+- Here we are changing str2's null value with the value of str1 .
+- Here string size have to be same.  
+
+
+2. Using Library Function
+```c
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str1[50];
+    gets(str1);
+    char str2[50]={'\0'};
+    strcpy(str2,str1);
+    printf("%s\t%s\n",str1,str2);
+    return 0;
+}
+
+```
