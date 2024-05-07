@@ -520,7 +520,7 @@ int main()
 }
 ```
 
-## Plaindrome
+## Palindrome
 <b>  
 
 > 1. Do the String reverse
