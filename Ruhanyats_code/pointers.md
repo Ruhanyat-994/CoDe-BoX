@@ -17,6 +17,7 @@ int main()
 ```plaintext
 000000ca66fffddc
 ```
+- We use & for memory address
 - Output is in the Hex format
 
 ## Basics of Pointers
@@ -48,7 +49,9 @@ int main()
 
     printf("%p\n",&myAge); /// hex of memory
     printf("%p\n", ptr); /// Hex of memory stored in ptr
-    printf("%d\n", *ptr);/// value of memory stored in ptr
+    printf("%d\n", *ptr);
+    printf("%d\n", myAge);
+    printf("%p\n", *ptr);
 }
 ```
 <b>Output:</b>
@@ -56,7 +59,15 @@ int main()
 00000000005ffe94
 00000000005ffe94
 50
+50
+0000000000000032
 ```
+
+- **Certainly! When you use printf("%p\n", \*ptr);, you're telling the program to print the memory address stored in the location pointed to by ptr. However, instead of printing the memory address, it interprets the value stored at that memory address (50) as a memory address itself. Since 50 isn't a valid memory address, it's printed as 0000000000000032**
+
+- **The output "0000000000000032" is the hexadecimal representation of the integer value `50`. In hexadecimal, `50` is represented as `32`. So, when `printf("%p\n", *ptr);` is executed, it interprets the value `50` as a memory address and prints its hexadecimal representation, which is `0000000000000032`.**
+
+
 ## Arrays with Pointer
 ```c
 #include<stdio.h>
@@ -119,3 +130,105 @@ int main()
 ```
 
 <b>This is for printing all elements through looping</b>
+
+```c
+#include<stdio.h>
+
+int main()
+{
+    int myAge[4] = {12, 14, 15, 15};
+    int *ptr = myAge; 
+
+    for(int i = 0; i < 4; i++)
+    {
+        printf("%d\n", *ptr);  
+        (*ptr) += i;           
+        ptr++;                 
+    }
+
+    return 0;
+}
+
+```
+
+## Some basics Again!
+
+```c
+#include<stdio.h>
+
+int main()
+{
+    int a=10;
+    int *p;
+    p= &a;
+    printf("%d %d %d %d\n",a,&a,*p,p);
+}
+
+```
+**\*p is carrying the value of the address of a, p is carrying only the address**
+
+**Pointers doesn't have any datatype the datatype in front of a pointer indecates the datatype of the address that the pointer is holding**
+
+### Pointers Problem Solve
+
+1. > <b>"WAP that will take two integers as input using pointers. And multiply the two values and display the results"</b>
+
+```c
+#include<stdio.h>
+
+int main()
+{
+    int a,b;
+    int *p,*q;
+    scanf("%d %d",p,q);
+    int result = (*p)*(*q);
+    printf("%d\n",result);
+    return 0;
+
+}
+
+```
+![alt text](image-1.png)
+
+![alt text](image-2.png)
+
+2. 
+![alt text](image-3.png)
+### Swaping
+```c
+#include<stdio.h>
+void swap(int *x,int *y)
+{
+    int t;
+    t=*x;
+    *x=*y;
+    *y=t;
+
+}
+int main()
+{
+    int x=4,y=5;
+    printf("x : %d , y : %d \n",x,y);
+    swap(&x,&y);
+    printf("x : %d , y : %d \n",x,y);
+}
+```
+![alt text](image.png)
+
+#### A simple example:
+```c
+#include<stdio.h>
+void printing(int *x)
+{
+    *x = *x +5;
+
+}
+int main()
+{
+    int a;
+    scanf("%d",&a);
+    printf("a:%d\n",a);
+    printing(&a);
+    printf("a:%d\n",a);
+}
+```
