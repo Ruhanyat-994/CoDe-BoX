@@ -188,12 +188,14 @@ int main()
 }
 
 ```
-![alt text](image-1.png)
+![pointer-1](https://github.com/Ruhanyat-994/CoDe-BoX/assets/110297704/4fc8e9a5-2171-4474-adad-59933dc09d35)
 
-![alt text](image-2.png)
+![pointer-2](https://github.com/Ruhanyat-994/CoDe-BoX/assets/110297704/656c65a5-5675-46f5-b63c-ce8d4dfe619a)
+
 
 2. 
-![alt text](image-3.png)
+![pointer-3](https://github.com/Ruhanyat-994/CoDe-BoX/assets/110297704/16b11758-b962-47b7-8b76-f18a09c2bcfe)
+
 ### Swaping
 ```c
 #include<stdio.h>
@@ -213,7 +215,8 @@ int main()
     printf("x : %d , y : %d \n",x,y);
 }
 ```
-![alt text](image.png)
+![pointer-4](https://github.com/Ruhanyat-994/CoDe-BoX/assets/110297704/80c63176-4182-4d4e-bdec-cbb45d3f5b49)
+
 
 #### A simple example:
 ```c
