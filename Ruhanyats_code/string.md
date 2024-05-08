@@ -156,7 +156,7 @@ int main()
 > 'We will cancel a uppercase representative and add a lowercase representative to get our desired result.For doing the vice-versa we will cancel the lowercase and add the uppercase'
 
 ### logic
-![alt text](image.png)
+![alt text](https://github.com/Ruhanyat-994/CoDe-BoX/blob/dev/Ruhanyats_code/Photos/image.png?raw=true)
 
 - we are adding the distance actually.
 
@@ -494,7 +494,7 @@ int main()
     printf("%s",str1);
 }
 ```
-![alt text](image-3.png)
+![alt text](https://github.com/Ruhanyat-994/CoDe-BoX/blob/dev/Ruhanyats_code/Photos/image-3.png?raw=true)
 
 1. At first we are swapping the char left to right  
 
@@ -520,7 +520,7 @@ int main()
 }
 ```
 
-## Plaindrome
+## Palindrome
 <b>  
 
 > 1. Do the String reverse
