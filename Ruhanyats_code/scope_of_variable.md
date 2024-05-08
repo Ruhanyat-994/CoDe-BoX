@@ -1,4 +1,4 @@
-![image-4](https://github.com/Ruhanyat-994/CoDe-BoX/assets/110297704/5547176d-2012-4bbd-9b2b-c691a136e7e3)# Scope Of Variable
+# Scope Of Variable
 #### Outline:
 <b>  
 
