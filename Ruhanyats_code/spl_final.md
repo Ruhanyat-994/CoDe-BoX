@@ -35,7 +35,7 @@ char str[7]="Hamid"
 
 - Here null char is called as EOS character 
 - Before null char all the chars are valid chars
-- 
+  
 
 
 ## Null Terminator
