@@ -26,7 +26,7 @@ int factorial(int x)
 ```
 - It won't run because the last value of n will be 0 and if you multiply 0 with something it will be 0 as well.
 #### Manual Tracing
-![alt text](image-8.png)
+![image-8](https://github.com/Ruhanyat-994/CoDe-BoX/assets/110297704/1d646904-f6c8-446e-a1e4-a4216ad69cbf)
 
 > **The main problem with recursion is it won't stop if we don't make a condition this condition is called as <b>base-case</b>**
 
@@ -54,9 +54,9 @@ int factorial(int x)
 }
 ```
 #### Manual Tracing
-![alt text](image-9.png)
+![image-9](https://github.com/Ruhanyat-994/CoDe-BoX/assets/110297704/72170f43-cce8-4939-8aca-fc29c3075230)
 
-![alt text](image-10.png)
+![image-10](https://github.com/Ruhanyat-994/CoDe-BoX/assets/110297704/a2c5acd1-d529-41da-bf79-35d43b3f182e)
 
 ### \# Problem-2
 > #### **Question- WAP which will print n to 1 using recursion**
@@ -167,18 +167,19 @@ int power(int a, int b)
 1. Writing the main function
 2. Writing the custom function according to the main function
 
-![alt text](image-11.png)
+![image-11](https://github.com/Ruhanyat-994/CoDe-BoX/assets/110297704/26c8e9e7-804d-4b67-80cb-f4d1f68a1938)
 
 ### \# Problem-6
 > #### **Question- WAP which will calculate nth fibonacci number using recursion**
 
 ### Fibonacci Number
-![alt text](image-13.png)
-![alt text](image-12.png)
+![image-13](https://github.com/Ruhanyat-994/CoDe-BoX/assets/110297704/9433d5b4-5e69-4cca-9a60-93dd2f69b78e)
+![image-12](https://github.com/Ruhanyat-994/CoDe-BoX/assets/110297704/c13fef64-1b0d-44da-8f98-07c8fbe641f2)  
+
 **We can use this logic**
 
-![alt text](image-14.png)
-![alt text](image-15.png)
+![image-14](https://github.com/Ruhanyat-994/CoDe-BoX/assets/110297704/dbfa716d-cffd-4607-b523-3b5d53de42a7)
+![image-15](https://github.com/Ruhanyat-994/CoDe-BoX/assets/110297704/7b1845d7-29e8-4209-9226-e7c9991e5d14)
 
 ```c
 #include<stdio.h>
@@ -237,9 +238,9 @@ int fibo(int n)
 ### \# Problem-7 \***
 > #### **Question- Stair Path(2 jumps max) there are nth stairs and you can us single or double steps , now find how many ways you can go to the nth stairs**
 
-![alt text](image-16.png)  
+![image-16](https://github.com/Ruhanyat-994/CoDe-BoX/assets/110297704/afa913b5-f818-4b8f-ab02-b07ea522fb32)
 
-![alt text](image-17.png)
+![image-17](https://github.com/Ruhanyat-994/CoDe-BoX/assets/110297704/8b2013e5-e95f-4b6d-9eac-c785d60cfbe1)
 
 ```c
 #include<stdio.h>
@@ -262,7 +263,7 @@ int stair(int n)
     return totalWays;
 }
 ```
-![alt text](image-18.png)
+![image-18](https://github.com/Ruhanyat-994/CoDe-BoX/assets/110297704/18628f4b-c4c1-4c97-889e-f1d1c668befe)
 
 ### \# Problem-8 \***
 > #### **Question- Stair Path(2 jumps max) there are nth stairs and you can us single , double or triple steps , now find how many ways you can go to the nth stairs**
@@ -292,8 +293,3 @@ int stair(int n) {
 }
 
 ```
-### \# Problem-9 \***
-> #### **Question- Maze Path (Down,Right and One step at a time)**
-
-![alt text](image-19.png)
-
