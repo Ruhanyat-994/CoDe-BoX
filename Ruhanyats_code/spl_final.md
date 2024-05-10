@@ -1504,7 +1504,7 @@ int main()
 > - Until it finds an new Line the string will be run
 > - We can use sizeof() function inside fgets()
 
-=======
+
 > ## End of File Handling
 
 
