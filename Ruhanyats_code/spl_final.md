@@ -1353,3 +1353,153 @@ int main()
 
 ---  
 ---
+
+# File Handling
+
+## Path
+> #### **Relative vs. Absolute Paths:**  Windows supports both relative and absolute paths. Absolute paths start from the root directory of the drive (e.g., C:\Folder\file.txt), while relative paths are relative to the current working directory (e.g., Folder\file.txt).
+
+## Pointers in File
+
+
+1. File handling functions require a pointer to a `FILE` object to operate on.
+2. Here FILE is a datatype which requires only pointers
+
+
+
+## File Operation
+
+<b>
+- Read    "r"
+- Write   "w"
+> "Rewrite"/ "Replace"
+> It will delete the previous content and add new that you write
+- Append  "a"
+> "add new content"
+> but if you need the previous content should stay and you add some new content at the end you will use append
+
+</b>
+
+## File LifeCycle
+- Create File Pointer
+- Open File
+- File Operation
+- Close Operation
+#### File Pointer  
+
+```c
+FILE *variable_name;
+
+```
+ #### File open
+
+ ```c
+ file = fopen("./input.txt","r");
+file = fopen("./input.txt","w");
+file = fopen("./input.txt","a");
+ ```
+ ```c
+ #include<stdio.h>
+int main()
+{
+       FILE *fptr;
+       fptr = fopen("file.txt","r");
+       fclose(fptr);
+       if(fptr != NULL)
+       {
+        printf("We are reading your file!");
+
+       }else{
+        printf("We can't read your file pls check the path!");
+       }
+
+}
+ ```
+ ```plaintext
+ Here if your path is correct then it will show - We are reading your file! unless
+ We can't read your file pls check the path!
+ 
+ ```
+
+ #### File close
+ ```c
+ fclose(file)
+ ```
+
+#### File open Issue solve
+- This is a permission related issue
+
+```c
+if(file == NULL)
+{
+    // file can't be open
+}
+else
+{
+    // file has been opened
+}
+```
+#### File input
+```c
+int a;
+fscanf(file,"%d",&a);
+
+```
+```c
+
+#include<stdio.h>
+int main()
+{
+       FILE *fptr;
+       fptr = fopen("file.txt","a");
+       fprintf(fptr,"\nits in the second line!");
+       
+       fclose(fptr);
+       
+
+}
+```
+
+#### File output:
+```c
+int a;
+fprintf(file,"%d",&a);
+
+```
+#### Some File Operations:
+1. <b>fopen()</b>
+2. <b>fclose()</b>
+3. <b>fscanf()</b>
+4. <b>fprintf()</b>
+5. <b>fgets()</b>
+   
+
+
+
+####  Opening a file
+```c
+int main()
+{
+    FILE *file;
+    file = fopen("./input.txt","r")
+
+    if(file==NULL)
+    {
+        printf("File can't be opened\n");
+
+    }
+    else
+    {
+        printf("File can be opened\n");
+    }
+    fclose(file);
+
+}
+```
+#### Some Advise
+
+> "Read the file until the EOF(End of File)"
+> - This is for working with the elements of that file
+> - We have to use a while loop for doing this.
+> - Until it finds an new Line the string will be run
+> - We can use sizeof() function inside fgets()
