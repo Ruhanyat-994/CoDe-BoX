@@ -35,7 +35,7 @@ char str[7]="Hamid"
 
 - Here null char is called as EOS character 
 - Before null char all the chars are valid chars
-- 
+  
 
 
 ## Null Terminator
@@ -1353,6 +1353,7 @@ int main()
 
 ---  
 ---
+<<<<<<< HEAD
 
 # File Handling
 
@@ -1503,3 +1504,5 @@ int main()
 > - We have to use a while loop for doing this.
 > - Until it finds an new Line the string will be run
 > - We can use sizeof() function inside fgets()
+=======
+>>>>>>> 28ba6a8dae2e43bde0e71e0641babae01396b458
