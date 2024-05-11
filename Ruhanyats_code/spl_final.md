@@ -1353,7 +1353,7 @@ int main()
 
 ---  
 ---
-<<<<<<< HEAD
+
 
 # File Handling
 
@@ -1504,5 +1504,225 @@ int main()
 > - We have to use a while loop for doing this.
 > - Until it finds an new Line the string will be run
 > - We can use sizeof() function inside fgets()
-=======
->>>>>>> 28ba6a8dae2e43bde0e71e0641babae01396b458
+
+ ## End of file Handling  
+
+
+
+---  
+---
+
+# Structure
+
+
+> **Structures (also called structs) are a way to group several related variables into one place. Each variable in the structure is known as a member of the structure.Unlike an array, a structure can contain many different data types (int, float, char, etc.).**
+
+### Creating a Structure
+*We can create a structure by using the struct keyword and declare each of its members inside curly braces:*
+
+```c
+struct MyStructure {   // Structure declaration
+  int myNum;           // Member (int variable)
+  char myLetter;       // Member (char variable)
+}; // End the structure with a semicolon
+
+```
+### Using variables
+
+##### Using string in structure
+
+```c
+#include<stdio.h>
+#include<string.h>
+
+struct myStructure
+{
+    int sum;
+    char str[20];
+};
+
+int main()
+{
+    struct myStructure s1;
+    s1.sum= 5+9;
+    s1.str = "hello world";
+
+
+    printf("The sum is %d\n",s1.sum);
+
+    printf("The complement is %s\n",s1.str);
+    
+}
+```
+An error will occur
+```plaintext
+prog.c:12:15: error: assignment to expression with array type
+```
+Right way:
+```c
+#include<stdio.h>
+#include<string.h>
+
+struct myStructure
+{
+    int sum;
+    char str[20];
+};
+
+int main()
+{
+    struct myStructure s1;
+    s1.sum= 5+9;
+    strcpy(s1.str, "This is me");
+
+
+    printf("The sum is %d\n",s1.sum);
+
+    printf("The complement is %s\n",s1.str);
+    
+}
+```
+**We can do this more simply:**
+```c
+#include<stdio.h>
+#include<string.h>
+
+struct myStructure
+{
+    int sum;
+    char str[20];
+};
+
+int main()
+{
+    struct myStructure s1 ={5+9,"Hello world"};
+    
+
+
+    printf("The sum is %d\n",s1.sum);
+
+    printf("The complement is %s\n",s1.str);
+    
+}
+```
+> **Note: The order of the inserted values must match the order of the variable types declared in the structure (13 for int, 'B' for char, etc).**
+
+### Copying Structure
+
+```c
+#include<stdio.h>
+#include<string.h>
+
+struct myStructure
+{
+    int sum;
+    char str[20];
+};
+
+int main()
+{
+    struct myStructure s1 ={5+9,"Hello world"};
+    struct myStructure s2;
+    s2=s1;
+    
+
+
+    printf("The sum is %d\n",s2.sum);
+
+    printf("The complement is %s\n",s2.str);
+    
+}
+```
+
+**Here If we want to copy the s1 into s2 we have to put s2 first in the assignment operator correct way:s2=s1 not s1=s2**
+
+# Structure Advance
+
+- We can't use different different datatypes in 2D array where we can store multiple things in rows and columns
+- So we use structure
+- **Structure is a user defined datatype**
+-  <b>struct studentId() -> in this case we are creating our own datatype with the help of struct.</b>
+
+### \# Problem1 **
+> #### **Question- Create a structure type "book" with name,price and number of pages as its attribute**
+
+```c
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+struct book{
+
+    char name[30];
+    int price;
+    int noOfPages;
+
+} a,b,c;
+
+a.noOfPages= 320;
+a.price = 450;
+strcpy(a.name,"Bug bounty bootcamp");
+
+printf("%d\n",a.noOfPages);
+printf("%d\n",a.price);
+printf("%s\n",a.name);
+
+
+}
+```
+### Typedef and Multiple Pointer declaration Problem
+> *In C and C++, typedef is indeed a keyword used to create an alias for an existing data type. It's a handy tool for making code more readable and manageable. Instead of using the original data type name throughout your code, you can create a typedef to give it a shorter, more descriptive name.*
+
+- If we put a typedef out of a function I mean in global space it will work for every function that the program has.
+
+```c
+typedef oldname newname
+```
+- It will convert the existing datatype name to a name that you will give it. If you do it into a function it will work for only that particular function. But if you set it globally it will work for ever function.
+
+**Normal typedef**
+```c
+#include<stdio.h>
+#include<string.h>
+
+typedef float realNumber;
+
+int main(){
+    int a=6;
+    realNumber hd = 45.45;
+
+    printf("%f",hd);
+
+}
+```
+**Let's use typedef into our previous structure problem**
+
+```c
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+typedef struct book{
+
+    char name[30];
+    int price;
+    int noOfPages;
+
+} book;
+
+book a;
+book b;
+book c;
+
+a.noOfPages= 320;
+a.price = 450;
+strcpy(a.name,"Bug bounty bootcamp");
+
+printf("%d\n",a.noOfPages);
+printf("%d\n",a.price);
+printf("%s\n",a.name);
+
+
+}
+```
+**Its running the same**
