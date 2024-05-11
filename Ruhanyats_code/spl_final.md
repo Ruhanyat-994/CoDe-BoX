@@ -1353,7 +1353,10 @@ int main()
 
 ---  
 ---
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6a804c226dc55738ba14c3af2b8c4e04ce98470b
 
 # File Handling
 
@@ -1505,12 +1508,18 @@ int main()
 > - Until it finds an new Line the string will be run
 > - We can use sizeof() function inside fgets()
 
+<<<<<<< HEAD
  ## End of file Handling  
+=======
+
+> ## End of File Handling
+>>>>>>> 6a804c226dc55738ba14c3af2b8c4e04ce98470b
 
 
 
 ---  
 ---
+<<<<<<< HEAD
 
 # Structure
 
@@ -1726,3 +1735,5 @@ printf("%s\n",a.name);
 }
 ```
 **Its running the same**
+=======
+>>>>>>> 6a804c226dc55738ba14c3af2b8c4e04ce98470b
