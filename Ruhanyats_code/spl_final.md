@@ -595,7 +595,8 @@ int main()
 > 2. Compare the reversed string with the actual string
 
 </b>
-```c
+```c 
+
 #include<stdio.h>
 #include<string.h>
 
