@@ -467,6 +467,74 @@ if str1 == str2 -> 0
 if str1 > str2 -> Positive
 if str1 < str2 -> Negative
 ```
+```c
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+
+    char str1[50];
+    fgets(str1,50,stdin);
+    char str2[50];
+    fgets(str2,50,stdin);
+
+    int len1 = strlen(str1);
+    int len2 = strlen(str2);
+
+    if(len1 != len2)
+    {
+        if(len1>len2)
+        {
+            printf("String1 is greater then string2");
+
+        }
+        else
+        {
+            printf("String2 is greater then string1");
+        }       
+        
+    }
+    else{
+        bool flag = true;
+        for(int i= 0; str1[i]!='\0';i++)
+        {
+            if(str1[i]!=str2[i])
+            { 
+            
+            if(str1[i]>str2[i])
+            {
+                printf("String1 is greater then string2");
+            }
+            else{
+                printf("String2 is greater then string1");
+                
+            }
+            
+            flag = false;
+            break;
+            }
+        }
+        if(flag == true)
+        {
+            printf("\n and Strings are same!");
+        }
+        else
+        {
+            printf("\n and Strings are not same!");
+        }
+    }
+
+
+}
+```
+**Output:**  
+```plaintext
+hello1
+hello2
+String2 is greater then string1
+Strings are not same!
+```
+
 ## String Reverse
 
 <b>1. Manually </b>
