@@ -594,9 +594,9 @@ int main()
 > 1. Do the String reverse
 > 2. Compare the reversed string with the actual string
 
-</b>
-```c 
+</b>  
 
+```c
 #include<stdio.h>
 #include<string.h>
 
@@ -645,6 +645,7 @@ int main(){
 
 }
 ```
+
 
 > ## End of String  
 
