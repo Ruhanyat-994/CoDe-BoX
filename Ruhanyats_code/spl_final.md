@@ -328,7 +328,7 @@ int main()
     gets(str2);
     int length = strlen(str1);
     int j = length;
-    for(int i=0;str2[i]!=0;i++) 
+    for(int i=0;str2[i]!='\0';i++) 
     {
         str1[j]=str2[i];
         j++;
