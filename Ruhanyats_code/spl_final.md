@@ -595,6 +595,55 @@ int main()
 > 2. Compare the reversed string with the actual string
 
 </b>
+```c
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+
+    char str[60];
+    fgets(str,sizeof(str),stdin);
+    
+    char reversed_str[60];
+    int flag = strlen(str);
+    
+
+    if (str[strlen(str) - 1] == '\n')
+    {
+        str[strlen(str) - 1] = '\0';
+    }
+
+    strcpy(reversed_str,str);
+    int left=0;
+    int right= strlen(reversed_str)-1;
+
+   while(left<right)
+   {
+    char temp = reversed_str[left];
+    reversed_str[left]=reversed_str[right];
+    reversed_str[right]=temp;
+    left++;
+    right--;
+   }
+
+   
+   
+   puts(reversed_str);
+   
+   
+   if (strcmp(str,reversed_str) == 0)
+   {
+    printf("%s is a palindrome!\n",str);
+   }
+   else
+   {
+    printf("%s is not a palindrome!\n",str);
+   }
+
+
+
+}
+```
 
 > ## End of String  
 
