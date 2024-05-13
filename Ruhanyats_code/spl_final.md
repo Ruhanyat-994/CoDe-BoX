@@ -1093,6 +1093,25 @@ int power(int a, int b)
 }
 
 ```
+```plaintext
+Let's say a = 2 and b = 3.
+
+When we execute power(2, 3), it will go through these steps:
+
+    power(2, 3): This will call power(2, 2) because b - 1 = 3 - 1 = 2.
+    power(2, 2): This will call power(2, 1) because b - 1 = 2 - 1 = 1.
+    power(2, 1): This will call power(2, 0) because b - 1 = 1 - 1 = 0.
+    power(2, 0): Since b is 0, it returns 1 (base case).
+    Now, backtracking:
+        power(2, 0) returned 1.
+        power(2, 1) will return 2 * 1 = 2.
+        power(2, 2) will return 2 * 2 = 4.
+        power(2, 3) will return 2 * 4 = 8.
+
+So, power(2, 3) returns 8, which is 2 raised to the power of 3.
+
+```
+
 1. Writing the main function
 2. Writing the custom function according to the main function
 
