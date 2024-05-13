@@ -1899,4 +1899,22 @@ printf("%s\n",a.name);
 
 }
 ```
+```c
+#include<stdio.h>
+
+int main()
+{
+
+    typedef int* pointer;
+
+    pointer x,y;
+
+}
+```
+
+```plaintext
+1. int* x,y means int8 x and int y
+2. to avoid this we can use typedef
+```
+
 
