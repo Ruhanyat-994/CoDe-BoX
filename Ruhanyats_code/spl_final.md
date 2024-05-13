@@ -1636,7 +1636,7 @@ int main()
 #### File output:
 ```c
 int a;
-fprintf(file,"%d",&a);
+fprintf(file,"%d",a);
 
 ```
 #### Some File Operations:
