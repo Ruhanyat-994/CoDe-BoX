@@ -1571,21 +1571,22 @@ file = fopen("./input.txt","w");
 file = fopen("./input.txt","a");
  ```
  ```c
- #include<stdio.h>
-int main()
-{
-       FILE *fptr;
-       fptr = fopen("file.txt","r");
-       fclose(fptr);
-       if(fptr != NULL)
-       {
-        printf("We are reading your file!");
+#include <stdio.h>
 
-       }else{
-        printf("We can't read your file pls check the path!");
-       }
+int main() {
+    FILE *fptr;
+    fptr = fopen("file.txt", "r");
 
+    if (fptr != NULL) {
+        printf("We are reading your file!\n");
+        fclose(fptr); // Close the file after reading or when not needed anymore
+    } else {
+        printf("We can't read your file pls check the path!\n");
+    }
+
+    return 0;
 }
+
  ```
  ```plaintext
  Here if your path is correct then it will show - We are reading your file! unless
