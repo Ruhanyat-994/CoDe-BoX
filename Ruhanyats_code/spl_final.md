@@ -1540,13 +1540,15 @@ int main()
 ## File Operation
 
 <b>
-- Read    "r"
-- Write   "w"
+- Read    "r"  
+- Write   "w"  
+ 
 > "Rewrite"/ "Replace"
-> It will delete the previous content and add new that you write
-- Append  "a"
-> "add new content"
+> It will delete the previous content and add new that you write  
+- Append  "a"  
+> "add new content"  
 > but if you need the previous content should stay and you add some new content at the end you will use append
+
 
 </b>
 
