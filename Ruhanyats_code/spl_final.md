@@ -1183,6 +1183,36 @@ int fibo(int n)
 >4. The base-case is if(n==1 || n==2 ) return 1; This is for place holder.
 </b>
 
+  
+```c
+#include<stdio.h>
+
+int fibo(int );
+
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    
+    printf("%d\n",fibo(n));
+    
+    for(int i =1;i<=n;i++)
+    {
+        printf("%d ",fibo(i));
+    }
+    return 0;
+}
+
+int fibo(int x)
+{
+    if(x==1 || x==2) return 1;
+    return fibo(x-1)+fibo(x-2);
+
+} 
+```
+**If you want to print till the last you can use this code**  
+
+
 ### \# Problem-7 \***
 > #### **Question- Stair Path(2 jumps max) there are nth stairs and you can us single or double steps , now find how many ways you can go to the nth stairs**
 
