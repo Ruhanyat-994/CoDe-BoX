@@ -2073,3 +2073,122 @@ Name: musfiq rahman
 
 ```  
 **If you want to take input of a whitespace string using scanf you have to use "%[^\n]s" this.**
+
+### Nested Structure
+
+```c 
+#include<stdio.h>
+#include<string.h>
+#include<stdbool.h>
+
+typedef struct pokemon{
+    char name[15];
+    int attack;
+    int hp;
+    int speed;
+    char tier;
+
+} pokemon;
+
+typedef struct legedary_pokemon{
+    pokemon normal;
+    char ability[10];
+
+} lg_pokemon;
+
+int main()
+{
+    lg_pokemon mewtwo;
+    strcpy(mewtwo.ability,"Pressure");
+    mewtwo.normal.attack=123;
+
+}
+```
+**Here we have declared the structure globlly now every function can use this struct**  
+
+### Structure Pointers
+
+![alt text](struct2.png)
+
+##### Printing the Address
+```c
+#include<stdio.h>
+#include<string.h>
+#include<stdbool.h>
+
+typedef struct pokemon{
+    char name[15];
+    int attack;
+    int hp;
+    int speed;
+    char tier;
+
+} pokemon;
+
+
+int main()
+{
+    pokemon pikachu;
+    pikachu.attack=123;
+    pikachu.hp=90;
+    pikachu.tier='A';
+    pikachu.speed=500;
+    strcpy(pikachu.name,"Pikachu");
+    pokemon* x=&pikachu;
+    printf("%p\n",&pikachu.hp);
+    printf("%p\n",&pikachu.tier);
+    printf("%p\n",&pikachu.speed);
+    printf("%p\n",&pikachu.attack);
+
+}
+```
+**Output:**  
+
+```plaintext
+00000000005ffe84
+00000000005ffe8c
+00000000005ffe88
+00000000005ffe80
+```
+
+### Passing value By Reference using Pointers
+
+
+```c
+#include<stdio.h>
+#include<string.h>
+#include<stdbool.h>
+
+typedef struct pokemon{
+    char name[15];
+    int attack;
+    int hp;
+    int speed;
+    char tier;
+
+} pokemon;
+
+
+int main()
+{
+    pokemon pikachu;
+    pikachu.attack=123;
+    pikachu.hp=90;
+    pikachu.tier='A';
+    pikachu.speed=500;
+    strcpy(pikachu.name,"Pikachu");
+    pokemon* x=&pikachu;
+    printf("%d\n",pikachu.hp);
+    
+    (*x).hp=70;
+    printf("%d\n",pikachu.hp);
+
+
+}
+```
+**Output:**
+
+```plaintext
+90
+70
+```
