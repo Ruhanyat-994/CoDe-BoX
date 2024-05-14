@@ -2108,7 +2108,8 @@ int main()
 
 ### Structure Pointers
 
-![alt text](struct2.png)
+![struct2](https://github.com/Ruhanyat-994/CoDe-BoX/assets/110297704/ba148700-1a37-41cb-bee2-47ded2fab3ad)
+
 
 ##### Printing the Address
 ```c
