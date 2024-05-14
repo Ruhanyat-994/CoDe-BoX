@@ -1916,5 +1916,159 @@ int main()
 1. int* x,y means int8 x and int y
 2. to avoid this we can use typedef
 ```
+### Printing PokeCard(Pokemon)  
+
+```c
+#include<stdio.h>
+#include<string.h>
+
+typedef struct pokemon{
+    char name[15];
+    int attack;
+    int hp;
+    int speed;
+    char tier;
+
+} pokemon;
 
 
+
+int main()
+{
+
+    pokemon arr[3];
+    arr[0].attack=50;
+    arr[0].hp=100;
+    arr[0].speed= 150;
+    arr[0].tier= 'B';
+    strcpy(arr[0].name,"Pikachu");
+    arr[1].attack=50;
+    arr[1].hp=100;
+    arr[1].speed= 1500;
+    arr[1].tier= 'S';
+    strcpy(arr[1].name,"MewTwo");
+    arr[2].attack=500;
+    arr[2].hp=1050;
+    arr[2].speed= 150;
+    arr[2].tier= 'A';
+    strcpy(arr[2].name,"Balbasor");
+  
+    for(int i=0;i<3;i++)
+    {
+        printf("\n%s\n",arr[i].name);
+        printf("\tAttack:%d\n",arr[i].attack);
+        printf("\tHp:%d\n",arr[i].hp);
+        printf("\tSpeed:%d\n",arr[i].speed);
+        printf("\tTier:%c\n",arr[i].tier);
+    }
+
+
+}
+```  
+**Output:**
+
+```plaintext
+Pikachu
+        Attack:50
+        Hp:100
+        Speed:150
+        Tier:B
+
+MewTwo
+        Attack:50
+        Hp:100
+        Speed:1500
+        Tier:S
+
+Balbasor
+        Attack:500
+        Hp:1050
+        Speed:150
+        Tier:A
+```
+
+### \# Problem-2 \***
+![alt text](image.png)
+
+```c
+#include<stdio.h>
+#include<string.h>
+
+typedef struct Cricketer{
+    char first_name[15];
+    char last_name[15];
+    int age;
+    int noOfTestMatch;
+    float average;
+    
+
+} cricketer;
+
+
+
+int main()
+{
+
+    cricketer arr[3];
+    
+    for(int i=0;i<3;i++)
+    {
+        printf("Enter First name: ");
+        scanf("%s",arr[i].first_name);
+        printf("Enter Last name: ");
+        scanf("%s",arr[i].last_name);
+        printf("Enter age: ");
+        scanf("%d",&arr[i].age);
+        printf("Enter number of Test matches: ");
+        scanf("%d",&arr[i].noOfTestMatch);
+        printf("Enter average: ");
+        scanf("%f",&arr[i].average);
+    }
+    printf("\n");
+     
+   for (int i = 0; i < 3; i++) {
+        printf("\nName: %s %s\n", arr[i].first_name,arr[i].last_name);
+        printf("\tAge: %d\n", arr[i].age);
+        printf("\tNumber of Test matches: %d\n", arr[i].noOfTestMatch);
+        printf("\tAverage: %.2f\n", arr[i].average);
+    }
+
+
+}
+```
+```plaintext
+
+Enter First name: tamim
+Enter Last name: iqbal
+Enter age: 32
+Enter number of Test matches: 32
+Enter average: 34
+Enter First name: sakib 
+Enter Last name: hasan
+Enter age: 45
+Enter number of Test matches: 45
+Enter average: 45
+Enter First name: musfiq
+Enter Last name: rahman
+Enter age: 32
+Enter number of Test matches: 43
+Enter average: 43
+
+
+Name: tamim iqbal
+        Age: 32
+        Number of Test matches: 32
+        Average: 34.00
+
+Name: sakib hasan
+        Age: 45
+        Number of Test matches: 45
+        Average: 45.00
+
+Name: musfiq rahman
+        Age: 32
+        Number of Test matches: 43
+        Average: 43.00
+
+```  
+**If you want to take input of a whitespace string using scanf you have to use "%[^\n]s" this.**
