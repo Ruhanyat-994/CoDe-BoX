@@ -1988,7 +1988,8 @@ Balbasor
 ```
 
 ### \# Problem-2 \***
-![alt text](image.png)
+![struc](https://github.com/Ruhanyat-994/CoDe-BoX/assets/110297704/1011d825-eade-47d8-a600-3349bc32330f)
+
 
 ```c
 #include<stdio.h>
