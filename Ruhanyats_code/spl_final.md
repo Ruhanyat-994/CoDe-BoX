@@ -1533,6 +1533,25 @@ int main()
     printf("a:%d\n",a);
 }
 ```
+### Accessing Array Using Pointers
+
+```c
+#include<stdio.h>
+
+int main()
+{
+    int a[5]={12,122,1222,12222,122222};
+    int *ptr ;
+    ptr = &a[0];
+    for(int i=0;i<5;i++)
+{
+    printf("%d\n",*ptr);
+    ptr++;
+}
+
+}
+```
+
 > ## End of Pointers  
 
 
