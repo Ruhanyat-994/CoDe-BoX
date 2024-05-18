@@ -79,7 +79,23 @@ int main()
     return 0;
 }
 ```
-- We can't input spaces here!
+- We can't input spaces here!  
+
+#### String Input Using fgets()
+
+```c
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char str[20];
+    fgets(str,sizeof(str),stdin);
+    printf("%s\n",str);
+    return 0;
+}s
+```
+
 
 ## Taking whitespaces
 - We can use ```fgets()```
