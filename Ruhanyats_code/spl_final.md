@@ -1953,7 +1953,7 @@ int* ptr == int *ptr // don't mess it up!s
 ```
 
 ```plaintext
-1. int* x,y means int8 x and int y
+1. int* x,y means int* x and int y
 2. to avoid this we can use typedef
 ```
 ### Printing PokeCard(Pokemon)  
