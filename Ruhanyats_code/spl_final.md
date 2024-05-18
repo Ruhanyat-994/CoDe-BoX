@@ -2026,6 +2026,83 @@ Balbasor
         Speed:150
         Tier:A
 ```
+### Another Pokemon problem
+```c
+#include<stdio.h>
+#include<string.h>
+
+typedef struct pokemon{
+    char name[15];
+    int speed;
+    int hp;
+
+
+} pok;
+
+int main()
+{
+    int numOfCards;
+    printf("How man cards you want to take?\n");
+    scanf("%d",&numOfCards);
+
+    getchar();
+
+    pok arr[numOfCards];
+
+    for (int i = 0; i < numOfCards; i++) {
+    printf("Give the name :\n");
+   // fgets(arr[i].name, sizeof(arr[i].name), stdin);
+    scanf("%s",arr[i].name);
+    printf("Give the speed :\n");
+    scanf("%d", &arr[i].speed); // Corrected
+    printf("Give the hp :\n");
+    scanf("%d", &arr[i].hp); // Corrected
+}
+
+    for(int i =0;i<numOfCards;i++)
+    {
+        printf("\n-------%s-------\n",arr[i].name);
+        printf("\tSpeed: %d",arr[i].speed);
+        printf("\tHp: %d",arr[i].hp);
+
+    }
+    return 0;
+
+
+}
+
+```
+```plaintext
+How man cards you want to take?
+3
+Give the name :
+Pikachu
+Give the speed :
+230
+Give the hp :
+120
+Give the name :
+Balbasour
+Give the speed :
+240
+Give the hp :
+130
+Give the name :
+Charizard
+Give the speed :
+300
+Give the hp :
+160
+
+-------Pikachu-------
+        Speed: 230      Hp: 120
+-------Balbasour-------
+        Speed: 240      Hp: 130
+-------Charizard-------
+        Speed: 300      Hp: 160
+
+```
+
 
 ### \# Problem-2 \***
 ![struc](https://github.com/Ruhanyat-994/CoDe-BoX/assets/110297704/1011d825-eade-47d8-a600-3349bc32330f)
